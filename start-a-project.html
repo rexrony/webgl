@@ -119,33 +119,7 @@
 	<script src="http://loyica-joomla.loyica.cloud/templates/loyica/js/classie.js"></script>
 	<script src="http://loyica-joomla.loyica.cloud/templates/loyica/js/fullscreenForm.js"></script>
 	<script src="http://loyica-joomla.loyica.cloud/templates/loyica/js/forms.js"></script>
-	<script>
-		(function () {
-			var formWrap = document.getElementById('fs-form-wrap');
 
-			[].slice.call(document.querySelectorAll('select.cs-select')).forEach(function (el) {
-				new SelectFx(el, {
-					stickyPlaceholder: false,
-					onChange: function (val) {
-						document.querySelector('span.cs-placeholder').style.backgroundColor = val;
-					}
-				});
-			});
-
-			$('input,select').change(function () {
-				var formData = $('#cn3').serializeObject();
-				var gf = function (n) { return (formData[n] || ''); };
-
-				var val = 'Hello! ' + gf('company_name') + ' is looking for ' + gf('service') + ' for their ' + gf('product') + '.'
-					+ "\nWe'd love to schedule a call and chat about the scope of our project."
-					+ "\nYou can email us at " + gf('email') + ' .'
-					+ "\n\nSincerely,\n\n" + gf('name');
-
-				$('input[name="message"]').val(val);
-			})
-
-		})();
-	</script>
 </body>
 
 </html>
